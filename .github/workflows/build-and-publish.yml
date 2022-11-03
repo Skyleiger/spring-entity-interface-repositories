@@ -22,15 +22,15 @@ jobs:
           architecture: x64
           cache: 'maven'
 
-      - name: Setup Maven Settings
+      - name: Set up Maven Settings
         uses: whelk-io/maven-settings-xml-action@v21
         with:
           servers: >
             [
               {
                 "id": "github",
-                "username": "Skyleiger",
-                "password": "${{ secrets.GITHUB_TOKEN }}"
+                "username": "${{ secrets.GH_PACKAGES_USERNAME }}",
+                "password": "${{ secrets.GH_PACKAGES_TOKEN }}"
               }
             ]
           output_file: .m2/settings.xml
