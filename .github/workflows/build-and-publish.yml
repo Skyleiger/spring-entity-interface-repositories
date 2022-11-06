@@ -21,19 +21,9 @@ jobs:
           java-version: 17
           architecture: x64
           cache: 'maven'
-
-      - name: Set up Maven Settings
-        uses: whelk-io/maven-settings-xml-action@v21
-        with:
-          servers: >
-            [
-              {
-                "id": "github",
-                "username": "${{ secrets.GH_PACKAGES_USERNAME }}",
-                "password": "${{ secrets.GH_PACKAGES_TOKEN }}"
-              }
-            ]
-          output_file: .m2/settings.xml
+          server-id: github
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
 
       - name: Cache build files
         uses: actions/cache@v3
@@ -42,7 +32,10 @@ jobs:
           path: target
 
       - name: Build with Maven
-        run: mvn -T 1C deploy
+        run: mvn --batch-mode -T 1C deploy
+        env:
+          MAVEN_USERNAME: ${{ secrets.GH_PACKAGES_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.GH_PACKAGES_TOKEN }}
 
       - name: Upload built JAR
         uses: actions/upload-artifact@v3
