@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.support.JpaEntityInformationSuppo
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 import org.springframework.data.repository.core.RepositoryMetadata;
 
-import javax.persistence.EntityManager;
-import javax.persistence.metamodel.EntityType;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.metamodel.EntityType;
 import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.Map;

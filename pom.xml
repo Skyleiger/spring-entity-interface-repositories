@@ -6,7 +6,7 @@
 
     <groupId>de.dwienzek</groupId>
     <artifactId>spring-entity-interface-repositories</artifactId>
-    <version>5.3.23</version>
+    <version>6.0.2</version>
     <name>spring-entity-interface-repositories</name>
     <description>spring-entity-interface-repositories</description>
 
@@ -27,13 +27,13 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>2.7.5</version>
+            <version>3.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
-            <version>2.2.3</version>
+            <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
